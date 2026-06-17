@@ -1,0 +1,205 @@
+/* Vibrant theme overrides for PortfolioPro AI screens.
+   Mode is controlled by .app-dark / .app-light on <html>. */
+
+:root {
+  --pp-accent-1: #ec4899; /* hot pink */
+  --pp-accent-2: #8b5cf6; /* violet */
+  --pp-accent-3: #22d3ee; /* cyan */
+  --pp-accent-4: #f59e0b; /* amber */
+  --pp-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%);
+}
+
+/* DARK MODE — vibrant on deep indigo */
+html.app-dark {
+  --pp-bg: #0a0420;
+  --pp-bg-2: #15082e;
+  --pp-surface: rgba(139, 92, 246, 0.08);
+  --pp-surface-strong: rgba(236, 72, 153, 0.12);
+  --pp-border: rgba(236, 72, 153, 0.18);
+  --pp-text: #f5e8ff;
+  --pp-text-muted: #b8a8d9;
+  --pp-primary: #f0abfc;
+  --pp-primary-on: #1a0033;
+}
+
+html.app-dark body,
+html.app-dark .bg-\[\#0b1326\],
+html.app-dark .bg-\[\#0a1124\] {
+  background: radial-gradient(ellipse at top, #1a0840 0%, var(--pp-bg) 60%) !important;
+  color: var(--pp-text) !important;
+}
+
+html.app-dark .glass-card,
+html.app-dark .bg-\[\#171f33\],
+html.app-dark .bg-\[\#222a3d\],
+html.app-dark .bg-\[\#1a2238\],
+html.app-dark .bg-surface-container-high,
+html.app-dark .bg-surface-container {
+  background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(236,72,153,0.08)) !important;
+  border: 1px solid var(--pp-border) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+/* LIGHT MODE — vibrant on cream */
+html.app-light {
+  --pp-bg: #fff5fb;
+  --pp-bg-2: #ffe9f6;
+  --pp-surface: #ffffff;
+  --pp-border: rgba(139, 92, 246, 0.2);
+  --pp-text: #1a0033;
+  --pp-text-muted: #5b3d7a;
+  --pp-primary: #8b5cf6;
+}
+
+html.app-light body,
+html.app-light .bg-\[\#0b1326\],
+html.app-light .bg-\[\#0a1124\] {
+  background: radial-gradient(ellipse at top, #ffe0f0 0%, var(--pp-bg) 60%) !important;
+  color: var(--pp-text) !important;
+}
+
+html.app-light .glass-card,
+html.app-light .bg-\[\#171f33\],
+html.app-light .bg-\[\#222a3d\],
+html.app-light .bg-\[\#1a2238\],
+html.app-light .bg-surface-container-high,
+html.app-light .bg-surface-container {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid var(--pp-border) !important;
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.08) !important;
+  backdrop-filter: blur(14px) !important;
+  color: var(--pp-text) !important;
+}
+
+html.app-light,
+html.app-light body,
+html.app-light h1, html.app-light h2, html.app-light h3,
+html.app-light h4, html.app-light h5, html.app-light h6,
+html.app-light p, html.app-light span, html.app-light li,
+html.app-light a, html.app-light label, html.app-light div,
+html.app-light .text-\[\#dae2fd\],
+html.app-light .text-on-surface,
+html.app-light .text-white,
+html.app-light [class*="text-white"] {
+  color: var(--pp-text) !important;
+}
+html.app-light .text-\[\#a8b3cf\],
+html.app-light .text-on-surface-variant,
+html.app-light .text-gray-300,
+html.app-light .text-gray-400,
+html.app-light .text-gray-500,
+html.app-light .text-white\/60,
+html.app-light .text-white\/70,
+html.app-light .text-white\/80 {
+  color: var(--pp-text-muted) !important;
+}
+
+/* Keep accent-colored text vibrant even in light mode (handled below) */
+html.app-light .text-\[\#c3c0ff\],
+html.app-light .text-primary,
+html.app-light .text-surface-tint,
+html.app-light .text-display-lg,
+html.app-light .text-display-md,
+html.app-light .text-headline-lg {
+  color: var(--pp-text) !important;
+}
+
+/* Vibrant accents — both modes */
+.bg-\[\#c3c0ff\],
+.bg-primary,
+.bg-surface-tint,
+.text-\[\#c3c0ff\],
+.text-primary,
+.text-surface-tint {
+  /* fallthrough handled below */
+}
+
+html.app-dark .text-\[\#c3c0ff\],
+html.app-dark .text-primary,
+html.app-dark .text-surface-tint {
+  color: var(--pp-primary) !important;
+}
+html.app-light .text-\[\#c3c0ff\],
+html.app-light .text-primary,
+html.app-light .text-surface-tint {
+  color: var(--pp-primary) !important;
+}
+
+.bg-\[\#c3c0ff\],
+.bg-primary,
+.bg-surface-tint {
+  background: var(--pp-gradient) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Buttons & CTAs glow */
+button,
+a.btn,
+[class*="rounded-full"][class*="bg-"] {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
+}
+button:hover,
+a.btn:hover {
+  filter: brightness(1.1) saturate(1.2);
+  transform: translateY(-1px);
+}
+
+/* AI glow accent */
+.ai-glow {
+  background: radial-gradient(circle at center, rgba(236, 72, 153, 0.25) 0%, rgba(139, 92, 246, 0.15) 35%, transparent 70%) !important;
+}
+
+/* Borders */
+html.app-dark .border-\[\#222a3d\],
+html.app-dark .border-white\/5,
+html.app-dark .border-white\/10,
+html.app-dark .border-outline-variant {
+  border-color: rgba(236, 72, 153, 0.18) !important;
+}
+html.app-light .border-\[\#222a3d\],
+html.app-light .border-white\/5,
+html.app-light .border-white\/10,
+html.app-light .border-outline-variant {
+  border-color: rgba(139, 92, 246, 0.18) !important;
+}
+
+/* Inputs */
+html.app-light input,
+html.app-light textarea,
+html.app-light select {
+  background: #fff !important;
+  color: var(--pp-text) !important;
+  border-color: var(--pp-border) !important;
+}
+html.app-dark input,
+html.app-dark textarea,
+html.app-dark select {
+  background: rgba(255,255,255,0.04) !important;
+  color: var(--pp-text) !important;
+  border-color: var(--pp-border) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--pp-accent-1) !important;
+  outline-offset: 2px !important;
+}
+
+/* Headings get a subtle vibrant gradient on landing-style displays */
+html.app-dark .text-display-lg,
+html.app-dark .text-display-md,
+html.app-dark .text-headline-lg {
+  background: var(--pp-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html.app-light .text-display-lg,
+html.app-light .text-display-md,
+html.app-light .text-headline-lg {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  background: none !important;
+}
