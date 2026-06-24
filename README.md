@@ -109,7 +109,7 @@ npm run start
 
 ## 📬 Contact
 
-- 📧 Email: your-email@example.com
+- 📧 Email: leevanshisharma@gmail.com
 - 💼 LinkedIn: [linkedin.com/in/leevanshi](#)
 - 🐙 GitHub: [github.com/leevanshi](https://github.com/leevanshi)
 
