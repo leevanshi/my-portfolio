@@ -1,77 +1,61 @@
-# PortfolioPro AI
+# What is 3d-portfolio?
 
-A modern, AI-powered portfolio builder built with React, TypeScript, and TanStack Start.
+It is a highly customizable dev portfolio template that features astonishing 3D graphics by taking advantage of webGL.
 
-## Tech Stack
+It is built using [threejs](https://github.com/mrdoob/three.js), [react-three-fiber](https://github.com/pmndrs/react-three-fiber), and [@react-three/drei](https://github.com/pmndrs/drei).
 
-- **React 19** - UI library
-- **TanStack Start** - Full-stack React framework with SSR
-- **TanStack Router** - File-based routing
-- **TanStack Query** - Data fetching and caching
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **ShadCN UI** - Component library
+Created by Tomas Gonzalez.
 
-## Getting Started
+# Example: 
+https://tomasgonzalez.github.io/3d-portfolio/
 
-### Prerequisites
+https://user-images.githubusercontent.com/26396804/193622132-c7e12305-3cbf-4c4c-8992-2f58104a5068.mp4
 
-- Node.js 20+ or 22+
-- npm or bun
 
-### Installation
+# Get started!
 
-```bash
-npm install
-```
+## First
 
-### Development
+Start by `forking` this repository, then clone your forked copy and navigate to the root directory.
 
-```bash
-npm run dev
-```
+## Install the dependencies with: 
 
-### Build
+### `yarn`
 
-```bash
-npm run build
-```
+## Then start the development server with:
 
-### Preview
+### `yarn start`
 
-```bash
-npm run preview
-```
+This runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Project Structure
+The page will reload when you make changes.
+You may also see any lint errors in the console.
 
-```
-src/
-├── components/       # React components
-│   └── ui/          # ShadCN UI components
-├── routes/          # File-based routes
-├── hooks/           # Custom React hooks
-├── lib/             # Utility functions and configurations
-│   └── api/         # API-related utilities
-├── server/          # Server-side code
-└── styles.css       # Global styles
-```
+## Modify the template to your taste.
 
-## Routing
+There is no coding required to configure the pages of the portfolio. 
+All the settings that you will ever need to touch are set inside the 
 
-TanStack Start uses **file-based routing**. Every `.tsx` file in the `src/routes` directory is a route.
+`src/configs.js`, `./constants/pageData.js`, and `src/theme.js`
 
-| File | URL |
-| --- | --- |
-| `index.tsx` | `/` |
-| `about.tsx` | `/about` |
-| `users/index.tsx` | `/users` |
-| `users/$id.tsx` | `/users/:id` (dynamic) |
-| `_layout.tsx` | layout route |
-| `__root.tsx` | app shell |
+## Video tutorial:
 
-`routeTree.gen.ts` is auto-generated. Don't edit it by hand.
+https://youtu.be/fC7e2ONfhUc
 
-## License
+## Deploy to github pages
 
-MIT
+First make sure to create a `gh-pages` branch.
+
+After pushing the branch to GitHub, head over to the `Settings` page of the repository and select in the `GitHub Pages` section the `gh-pages` branch as source.
+
+After that run:
+
+### `yarn deploy`
+
+And thats It! It will automatically deploy to `https://{username}.github.io/{repo-name}`
+
+# More info
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tomasgonzalez)
+

@@ -1,0 +1,156 @@
+.ngo {
+  position: relative;
+  padding: 8rem 2rem;
+  background: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__header-icon {
+    font-size: 2.5rem;
+    color: #8B5CF6;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.5));
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  &__card {
+    position: relative;
+    padding: 3rem;
+    background: rgba(11, 17, 32, 0.7);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    perspective: 1000px;
+  }
+
+  &__card-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover &__card-glow {
+    opacity: 1;
+  }
+
+  &__card-icon {
+    font-size: 3rem;
+    z-index: 1;
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+
+  &__card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    z-index: 1;
+  }
+
+  &__card-org {
+    font-size: 1.1rem;
+    font-weight: 600;
+    z-index: 1;
+  }
+
+  &__card-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(224, 231, 255, 0.8);
+    z-index: 1;
+  }
+
+  &__card-impact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+    background: rgba(139, 92, 246, 0.08);
+    border-radius: 10px;
+    border-left: 3px solid #8B5CF6;
+    z-index: 1;
+    margin-top: 0.5rem;
+  }
+
+  &__impact-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8B5CF6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__impact-value {
+    font-size: 0.95rem;
+    color: #e0e7ff;
+    font-weight: 500;
+  }
+
+  &__card-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    &__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+    
+    &__card {
+      padding: 2rem;
+    }
+  }
+}

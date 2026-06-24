@@ -1,0 +1,145 @@
+.about {
+  position: relative;
+  padding: 8rem 2rem;
+  background: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+  }
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: center;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(224, 231, 255, 0.85);
+  }
+
+  &__highlight {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8B5CF6;
+    padding: 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-left: 4px solid #8B5CF6;
+    border-radius: 0 8px 8px 0;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  &__stat {
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  &__stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__stat-label {
+    font-size: 0.9rem;
+    color: rgba(224, 231, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  &__card {
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  &__card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+
+  &__card-description {
+    font-size: 0.9rem;
+    color: rgba(224, 231, 255, 0.7);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    &__content {
+      grid-template-columns: 1fr;
+    }
+
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+
+    &__stats {
+      grid-template-columns: 1fr;
+    }
+
+    &__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+}
