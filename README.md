@@ -7,7 +7,10 @@
 > A personal developer portfolio showcasing my projects, skills, and experience in full-stack web development, machine learning, and NLP.
 
 ---
-demo: [Uploading portfolio recording.zip…]()
+demo: 
+
+https://github.com/user-attachments/assets/b8498a21-479e-466c-9c4e-3e3bf57e959a
+
 
 
 
