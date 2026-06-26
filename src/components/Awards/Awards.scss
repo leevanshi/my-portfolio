@@ -57,6 +57,10 @@
     align-items: center;
     gap: 1rem;
     justify-content: center;
+
+    .awards__section-icon {
+      filter: drop-shadow(0 0 8px #8B5CF6);
+    }
   }
 
   &__section-icon {
@@ -77,7 +81,7 @@
     padding: 2rem;
     text-align: center;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
   }
 
   &__card-glow {
@@ -131,7 +135,7 @@
     position: relative;
     padding: 2.5rem;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
   }
 
   &__ngo-glow {
@@ -193,7 +197,7 @@
     align-items: center;
     gap: 1rem;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
   }
 
   &__badge-icon {
