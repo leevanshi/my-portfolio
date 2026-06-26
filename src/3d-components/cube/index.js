@@ -8,7 +8,7 @@ import useSetColor from './hooks/useSetColor';
 import Page from './components/Page';
 
 import model from '~/src/assets/cube.glb';
-import profilePicture from '~/src/public/pictures/profile-picture.jpg';
+const profilePicture = process.env.PUBLIC_URL + '/pictures/profile-picture.jpg';
 
 const START_POINT = 0.69;
 
