@@ -21,11 +21,8 @@ import Hologram from '../3d-components/hologram';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
-import Experience from '../components/Experience';
-import Leadership from '../components/Leadership';
-import NGO from '../components/NGO';
+import Awards from '../components/Awards';
 import Skills from '../components/Skills';
-import Achievements from '../components/Achievements';
 import Contact from '../components/Contact';
 
 function MainScene() {
@@ -46,17 +43,14 @@ function MainScene() {
         overflow: 'hidden',
       }}
     >
-      <ScrollControls damping={8} distance={1} pages={8}>
+      <ScrollControls damping={8} distance={1} pages={7}>
         <Scroll html style={{ width: '100%', pointerEvents: 'all' }}>
           <ScrollReminderPage />
           <Hero />
           <About />
           <Projects />
-          <Experience />
-          <Leadership />
-          <NGO />
+          <Awards />
           <Skills />
-          <Achievements />
           <Contact />
         </Scroll>
         <Bloom>

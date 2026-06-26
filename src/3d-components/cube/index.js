@@ -8,6 +8,7 @@ import useSetColor from './hooks/useSetColor';
 import Page from './components/Page';
 
 import model from '~/src/assets/cube.glb';
+import profilePicture from '~/src/public/pictures/profile-picture.jpg';
 
 const START_POINT = 0.69;
 
@@ -21,10 +22,26 @@ function Box(props) {
   useSetColor(nodes);
 
   useEffect(() => {
+    // Load profile picture as texture
+    const textureLoader = new THREE.TextureLoader();
+    textureLoader.load(profilePicture, (texture) => {
+      texture.colorSpace = THREE.SRGBColorSpace;
+      
+      // Apply texture to cube faces
+      if (nodes['Cube002'] && nodes['Cube002'].children) {
+        nodes['Cube002'].children.forEach((face) => {
+          if (face.material) {
+            face.material.map = texture;
+            face.material.needsUpdate = true;
+          }
+        });
+      }
+    });
+
     animations.forEach((animation) => {
       void (actions[animation.name].play().paused = true);
     });
-  }, [actions, animations]);
+  }, [actions, animations, nodes]);
 
   useFrame((state, delta) => {
     const offset = scroll.range(START_POINT, 0.4);

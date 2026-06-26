@@ -1,0 +1,250 @@
+.awards {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  overflow: hidden;
+
+  &__container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__header-icon {
+    font-size: 3rem;
+    color: #8B5CF6;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+
+  &__section {
+    margin-bottom: 5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: #e0e7ff;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  &__section-icon {
+    color: #8B5CF6;
+    font-size: 2rem;
+  }
+
+  // Leadership Cards
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__card {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &__card-glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &__card:hover &__card-glow {
+    opacity: 1;
+  }
+
+  &__card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  &__card-org {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  &__card-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.7;
+  }
+
+  // NGO Cards
+  &__ngo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  &__ngo-card {
+    position: relative;
+    padding: 2.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &__ngo-glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &__ngo-card:hover &__ngo-glow {
+    opacity: 1;
+  }
+
+  &__ngo-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__ngo-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  &__ngo-role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__ngo-description {
+    font-size: 1rem;
+    color: rgba(224, 231, 255, 0.8);
+    line-height: 1.6;
+  }
+
+  &__ngo-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.7;
+  }
+
+  // Achievement Badges
+  &__badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  &__badge {
+    position: relative;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &__badge-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  &__badge-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e0e7ff;
+    line-height: 1.4;
+  }
+
+  &__badge-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0.6;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__ngo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__badges {
+      grid-template-columns: 1fr;
+    }
+
+    &__section-title {
+      font-size: 1.5rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}

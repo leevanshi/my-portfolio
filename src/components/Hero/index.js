@@ -5,12 +5,18 @@ import './Hero.scss';
 const Hero = () => {
   const [titleIndex, setTitleIndex] = useState(0);
   const titles = [
-    'Founder @ eCanteen',
     'Full Stack Developer',
-    'AI & Blockchain Enthusiast',
-    'Computer Engineering Student',
-    'Entrepreneurship & Community Leader'
+    'AI Builder',
+    'Founder of eCanteen',
+    'Computer Engineering Student'
   ];
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -93,6 +99,7 @@ const Hero = () => {
             className="hero__btn hero__btn--primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => scrollToSection('projects')}
           >
             View My Work
           </motion.button>
@@ -100,6 +107,7 @@ const Hero = () => {
             className="hero__btn hero__btn--secondary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => scrollToSection('contact')}
           >
             Get In Touch
           </motion.button>

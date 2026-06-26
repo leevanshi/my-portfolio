@@ -8,9 +8,9 @@ const About = () => {
   
   const [counters, setCounters] = useState({
     projects: 0,
-    years: 0,
-    technologies: 0,
-    impact: 0
+    events: 0,
+    ngos: 0,
+    leetcode: 0
   });
 
   useEffect(() => {
@@ -21,9 +21,9 @@ const About = () => {
 
       const targets = {
         projects: 15,
-        years: 3,
-        technologies: 20,
-        impact: 5000
+        events: 10,
+        ngos: 2,
+        leetcode: 50
       };
 
       let currentStep = 0;
@@ -35,9 +35,9 @@ const About = () => {
 
         setCounters({
           projects: Math.floor(targets.projects * easeProgress),
-          years: Math.floor(targets.years * easeProgress),
-          technologies: Math.floor(targets.technologies * easeProgress),
-          impact: Math.floor(targets.impact * easeProgress)
+          events: Math.floor(targets.events * easeProgress),
+          ngos: Math.floor(targets.ngos * easeProgress),
+          leetcode: Math.floor(targets.leetcode * easeProgress)
         });
 
         if (currentStep >= steps) {
@@ -72,10 +72,10 @@ const About = () => {
   };
 
   const stats = [
-    { value: counters.projects, label: 'Projects Built', suffix: '+' },
-    { value: counters.years, label: 'Years Experience', suffix: '+' },
-    { value: counters.technologies, label: 'Technologies', suffix: '+' },
-    { value: counters.impact, label: 'Lives Impacted', suffix: '+' },
+    { value: counters.projects, label: 'Projects Built', suffix: '+', icon: '🚀' },
+    { value: counters.events, label: 'Events', suffix: '+', icon: '🎪', description: 'Anchored and led many events at college' },
+    { value: counters.ngos, label: 'NGOs', suffix: '', icon: '🌍', description: 'Volunteered with Muskurahat Foundation & SWAAS NGO' },
+    { value: counters.leetcode, label: 'LeetCode', suffix: '+', icon: '💻', description: 'Solved 50+ coding problems on LeetCode' },
   ];
 
   return (
@@ -125,6 +125,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <div className="about__stat-icon">{stat.icon}</div>
                 <motion.div
                   className="about__stat-value gradient-text"
                   initial={{ scale: 0 }}
@@ -134,6 +135,9 @@ const About = () => {
                   {stat.value}{stat.suffix}
                 </motion.div>
                 <div className="about__stat-label">{stat.label}</div>
+                {stat.description && (
+                  <div className="about__stat-description">{stat.description}</div>
+                )}
               </motion.div>
             ))}
           </motion.div>

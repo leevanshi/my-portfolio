@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaPaperPlane, FaLocationArrow } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaPaperPlane, FaLocationArrow, FaInstagram } from 'react-icons/fa';
 import './Contact.scss';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submission:', formData);
+    const mailtoLink = `mailto:leevanshi@example.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    window.location.href = mailtoLink;
     setSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', message: '' });
     setTimeout(() => setSubmitted(false), 5000);
   };
 
@@ -112,10 +112,29 @@ const Contact = () => {
               >
                 <FaLinkedin />
               </motion.a>
+              <motion.a
+                href="mailto:leevanshi@example.com"
+                className="contact-section__social-link"
+                whileHover={{ scale: 1.1, backgroundColor: 'rgba(139, 92, 246, 0.2)' }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaEnvelope />
+              </motion.a>
+              <motion.a
+                href="https://instagram.com/leevanshi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-section__social-link"
+                whileHover={{ scale: 1.1, backgroundColor: 'rgba(236, 72, 153, 0.2)' }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaInstagram />
+              </motion.a>
             </div>
 
             <motion.a
-              href="#resume-placeholder"
+              href="/public/assets/resume.pdf"
+              target="_blank"
               className="contact-section__resume-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -147,18 +166,6 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  required
-                  className="contact-section__input"
-                />
-              </div>
-
-              <div className="contact-section__input-group">
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Subject"
                   required
                   className="contact-section__input"
                 />

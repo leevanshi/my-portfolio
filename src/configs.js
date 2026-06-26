@@ -8,7 +8,7 @@ import {
 
 const configs = {
   title: 'Leevanshi Sharma',
-  subTitle: 'Founder | Dev | AI Builder',
+  subTitle: 'Full Stack Dev | AI Builder | Founder of eCanteen',
   stars: {
     maxSize: 20,
     emissionIntencity: 40,
@@ -37,26 +37,26 @@ const configs = {
       displayAt: displayAt('Projects'),
       rotation: [0, -Math.PI / 2, 0],
       position: [-PAGE_DEPH_MARGIN, 0, 0],
-      title: 'Projects',
+      title: 'Featured Projects',
       imageList: EXPERIENCE,
-      footer: 'Click to explore my work',
+      footer: 'Navigate through projects using arrows',
     },
     {
       scale: 15,
-      displayAt: displayAt('Experience'),
+      displayAt: displayAt('Awards'),
       rotation: [-Math.PI / 2, 0, -Math.PI / 2],
       position: [0, PAGE_DEPH_MARGIN, 0],
-      title: 'Experience',
-      footer: 'Building the future',
+      title: 'Awards & Honors',
+      footer: 'Recognition & Impact',
       imageList: SKILLS_LIST,
     },
     {
       scale: 15,
-      displayAt: displayAt('Leadership'),
+      displayAt: displayAt('Skills'),
       rotation: [0, 0, 0],
       position: [0, 0, PAGE_DEPH_MARGIN],
-      title: 'Leadership',
-      footer: 'Leading teams & initiatives',
+      title: 'Skills',
+      footer: 'Full Stack & AI Expertise',
       imageList: {
         rows: 1,
         separation: 3,
@@ -66,47 +66,6 @@ const configs = {
         items: [
           {
             url: 'icons/resume.png',
-            websiteURL: '#leadership',
-          },
-        ],
-      },
-    },
-    {
-      scale: 15,
-      displayAt: displayAt('Skills'),
-      rotation: [Math.PI / 2, 0, 0],
-      position: [0, -PAGE_DEPH_MARGIN, 0],
-      title: 'Skills',
-      footer: 'Full Stack & AI Expertise',
-      imageList: {
-        rows: 2,
-        separation: 2.5,
-        leftPadding: -0.4,
-        topPadding: 0.2,
-        scale: 0.3,
-        items: [
-          {
-            url: 'websites-preview/nft-place-logo.png',
-            websiteURL: '#skills',
-          },
-          {
-            url: 'websites-preview/snow-hero.png',
-            websiteURL: '#skills',
-          },
-          {
-            url: 'websites-preview/minecraft-in-js.png',
-            websiteURL: '#skills',
-          },
-          {
-            url: 'websites-preview/fish-chopter.png',
-            websiteURL: '#skills',
-          },
-          {
-            url: 'websites-preview/odd-clowns.png',
-            websiteURL: '#skills',
-          },
-          {
-            url: 'websites-preview/island-ai.png',
             websiteURL: '#skills',
           },
         ],
@@ -115,14 +74,14 @@ const configs = {
     {
       scale: 15,
       displayAt: displayAt('Contact'),
-      rotation: [0, Math.PI / 2, 0],
-      position: [PAGE_DEPH_MARGIN, 0, 0],
+      rotation: [Math.PI / 2, 0, 0],
+      position: [0, -PAGE_DEPH_MARGIN, 0],
       title: 'Get In Touch',
       footer: 'Let\'s build something amazing together',
       imageList: {
         rows: 2,
-        separation: 1.8,
-        leftPadding: -0.25,
+        separation: 2.5,
+        leftPadding: -0.4,
         topPadding: 0.2,
         scale: 0.3,
         items: [
